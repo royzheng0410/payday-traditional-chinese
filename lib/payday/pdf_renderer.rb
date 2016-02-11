@@ -30,6 +30,7 @@ module Payday
       notes(invoice, pdf)
 
       page_numbers(pdf)
+      pdf.font('Custom')
 
       pdf
     end
