@@ -18,9 +18,10 @@ module Payday
       pdf = Prawn::Document.new(page_size: invoice_or_default(invoice, :page_size))
 
       # set up some default styling
+      p "========================"
       pdf.font_size(8)
-      pdf.font_families.update('Custom' => {:normal => "/Users/zhengchen/project/click_clock/app/assets/fonts/wt006.ttf"})
-
+      pdf.font_families.update("Custom" => {:normal => "/Users/zhengchen/project/click_clock/app/assets/fonts/wt006.ttf"})
+      pdf.font("Custom")
       stamp(invoice, pdf)
       company_banner(invoice, pdf)
       bill_to_ship_to(invoice, pdf)
@@ -30,7 +31,7 @@ module Payday
       notes(invoice, pdf)
 
       page_numbers(pdf)
-      pdf.font('Custom')
+
 
       pdf
     end
