@@ -18,8 +18,6 @@ module Payday
       pdf = Prawn::Document.new(page_size: invoice_or_default(invoice, :page_size))
 
       # set up some default styling
-      p "========================"
-      p Rails.root
       
       pdf.font_families.update("123" => {:normal => "#{Rails.root.to_s}/app/assets/fonts/wt006.ttf",
                                          :bold => "#{Rails.root.to_s}/app/assets/fonts/wt006.ttf",
