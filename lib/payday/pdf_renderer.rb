@@ -19,7 +19,7 @@ module Payday
 
       # set up some default styling
       pdf.font_size(8)
-      pdf.font_families.update('Custom' => {:normal => "#{Rails.root}/app/assets/fonts/wt006.ttf"})
+      pdf.font_families.update('Custom' => {:normal => "/Users/zhengchen/project/click_clock/app/assets/fonts/wt006.ttf"})
 
       stamp(invoice, pdf)
       company_banner(invoice, pdf)
