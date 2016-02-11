@@ -19,6 +19,7 @@ module Payday
 
       # set up some default styling
       p "========================"
+      p Rails.root
       pdf.font_size(8)
       pdf.font_families.update("123" => {:normal => "#{Rails.root}/app/assets/fonts/wt006.ttf"})
       pdf.font("123")
