@@ -20,9 +20,10 @@ module Payday
       # set up some default styling
       p "========================"
       p Rails.root
+      
+      pdf.font_families.update("123" => {:normal => "#{Rails.root}/app/assets/fonts/wt006.ttf"})
+      pdf.font "123"
       pdf.font_size(8)
-      font_families.update("123" => {:normal => "#{Rails.root}/app/assets/fonts/wt006.ttf"})
-      pdf.font = font "123"
       stamp(invoice, pdf)
       company_banner(invoice, pdf)
       bill_to_ship_to(invoice, pdf)
