@@ -21,8 +21,11 @@ module Payday
       p "========================"
       p Rails.root
       
-      pdf.font_families.update("123" => {:normal => "#{Rails.root}/app/assets/fonts/wt006.ttf"})
-      pdf.font "123"
+      pdf.font_families.update("123" => {:normal => "#{Rails.root.to_s}/app/assets/fonts/wt006.ttf",
+                                         :bold => "#{Rails.root.to_s}/app/assets/fonts/wt006.ttf",
+                                         :italic => "#{Rails.root.to_s}/app/assets/fonts/wt006.ttf",
+                                         :bold_italic => "#{Rails.root.to_s}/app/assets/fonts/wt006.ttf"})
+      pdf.font("123", :style => :normal)
       pdf.font_size(8)
       stamp(invoice, pdf)
       company_banner(invoice, pdf)
